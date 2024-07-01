@@ -1,0 +1,227 @@
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+/* Global styles */
+:root {
+  --primary-color: #593e25;
+  --secondary-color: #f2ae2e;
+  --tertiary-color: #f2c230;
+  --text-color: #000;
+  --background-color: #fff;
+  --button-hover-color: #01c1f1;
+  --footer-color: rgba(2, 73, 89, 0.91);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+/* Navbar styles */
+.navbar {
+  background: var(--primary-color);
+  color: var(--background-color);
+  padding: 1.25rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Section styles */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 5%;
+  flex: 1;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.section-1 {
+  background: rgba(2, 73, 89, 0.91);
+}
+.section-2 {
+  background: var(--secondary-color);
+}
+.section-3 {
+  background: var(--tertiary-color);
+}
+
+/* Image styles */
+.img-container {
+  width: 100%;
+  max-width: 22.625rem;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+}
+.img-container:hover img {
+  transform: scale(1.1); /* Zoom effect */
+}
+
+#img1 {
+  border-radius: 0 100% 100% 12.5%;
+}
+#img2 {
+  border-radius: 100% 0 12.5% 100%;
+}
+#img3 {
+  border-radius: 100%;
+}
+
+/* Content container styles */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.625rem;
+  max-width: 38.625rem;
+  width: 100%;
+}
+
+.content {
+  background: var(--background-color);
+  border-radius: 0.625rem;
+  padding: 1.375rem 2.5rem;
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.25);
+}
+
+/* Typography styles */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+h3,
+h4 {
+  font-size: 1rem;
+  margin-left: 8.75rem;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0 1.25rem 0;
+}
+
+/* Button styles */
+.button {
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 0.625rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.625rem;
+  background: rgba(2, 73, 89, 0.91);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--background-color);
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  width: 5.3125rem; /* 85px */
+  height: 2.5625rem; /* 41px */
+}
+
+.button:hover {
+  background: var(--button-hover-color);
+  color: var(--text-color);
+}
+
+.button.primary-button {
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* Estilos especializados para buttons */
+#button1:hover {
+  background: var(--button-hover-color);
+  color: var(--text-color);
+  transform: scale(1.05);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.25);
+}
+
+#button2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.25);
+}
+
+#button3:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.25);
+}
+
+/* Footer styles */
+.footer {
+  background: var(--footer-color);
+  color: var(--background-color);
+  padding: 1.25rem 5%;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 48rem) {
+  body {
+    font-size: 14px;
+  }
+
+  .navbar,
+  .section {
+    padding: 1.25rem 3%;
+  }
+
+  .content {
+    padding: 1rem 1.25rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+  h3,
+  h4 {
+    margin-left: 0;
+  }
+  .section-2 {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 30rem) {
+  .img-container {
+    max-width: 100%;
+  }
+}
