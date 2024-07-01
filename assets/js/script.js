@@ -65,3 +65,42 @@ setupConfettiButton(
   },
   1000
 );
+document.addEventListener('scroll', function() {
+  const scrolled = window.scrollY;
+  const parallaxImages = document.querySelectorAll('.parallax');
+
+  parallaxImages.forEach(image => {
+    image.style.transform = `translateY(${scrolled * 0.2}px)`;
+  });
+});
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+const links = document.querySelectorAll('a');
+
+links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetUrl = e.target.href;
+
+    document.body.classList.add('page-transition-exit-active');
+
+    setTimeout(() => {
+      window.location.href = targetUrl;
+    }, 300); // Debe coincidir con el tiempo de transición en CSS
+  });
+});
