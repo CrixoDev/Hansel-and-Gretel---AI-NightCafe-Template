@@ -92,15 +92,3 @@ sections.forEach(section => {
 });
 const links = document.querySelectorAll('a');
 
-links.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const targetUrl = e.target.href;
-
-    document.body.classList.add('page-transition-exit-active');
-
-    setTimeout(() => {
-      window.location.href = targetUrl;
-    }, 300); // Debe coincidir con el tiempo de transición en CSS
-  });
-});
